@@ -1,8 +1,8 @@
-import React, { useState, useEffect, useCallback } from 'react';
-import useDebounce from './useDebounce';
+import { useCallback, useEffect, useState } from "react";
+import useDebounce from "./useDebounce";
 
 const SearchComponent = () => {
-  const [query, setQuery] = useState('');
+  const [query, setQuery] = useState("");
   const [results, setResults] = useState([]);
 
   const debouncedQuery = useDebounce(query, 500);
@@ -32,15 +32,18 @@ const SearchComponent = () => {
         value={query}
         onChange={(e) => setQuery(e.target.value)}
         placeholder="Search GIFs..."
+        style={{ color: "black" }}
       />
 
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '10px' }}>
+      <div
+        style={{
+          display: "grid",
+          gridTemplateColumns: "repeat(4, 1fr)",
+          gap: "10px",
+        }}
+      >
         {results.map((gif) => (
-          <img
-            key={gif.id}
-            src={gif.images.fixed_height.url}
-            alt={gif.title}
-          />
+          <img key={gif.id} src={gif.images.fixed_height.url} alt={gif.title} />
         ))}
       </div>
     </div>

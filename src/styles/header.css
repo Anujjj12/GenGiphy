@@ -1,0 +1,20 @@
+/* .heading{
+    padding-right: 2000px;
+}
+.user{
+    padding-left: 1500px;
+} */
+ .header{
+    display: flex;
+    justify-content: space-between;
+    color: black;
+ }  
+ .icon{
+    display: flex;
+    justify-content: space-between;
+ }
+ *{
+    /* background-color: antiquewhite; */
+    background-image: radial-gradient(rgb(215, 216, 206) , rgb(209, 225, 195));
+    justify-content: space-evenly;
+ }

@@ -1,12 +1,6 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
-const CATEGORIES = [
-  "Trending",
-  "Funny",
-  "Sports",
-  "Movies",
-  "Memes",
-];
+const CATEGORIES = ["Trending", "Funny", "Sports", "Movies", "Memes"];
 
 const API_KEY = "uBjiL1TsBZMW0cJATR7AHH64nuqj0EqF";
 
@@ -54,7 +48,7 @@ const CategoryGallery = () => {
       </div>
 
       {loading ? (
-        <p>Loading...</p>
+        <p style={{ color: "black" }}>Loading...</p>
       ) : (
         <div
           style={{
@@ -64,12 +58,16 @@ const CategoryGallery = () => {
           }}
         >
           {gifs.map((gif) => (
-            <img
-              key={gif.id}
-              src={gif.images.fixed_height.url}
-              alt={gif.title}
-              style={{ width: "100%", borderRadius: "8px" }}
-            />
+            <ul>
+              <li>
+                <img
+                  key={gif.id}
+                  src={gif.images.fixed_height.url}
+                  alt={gif.title}
+                />
+                <text>{gif.title}</text>
+              </li>
+            </ul>
           ))}
         </div>
       )}
